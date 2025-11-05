@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — SOUL RestroCafé</title>
+  <meta name="description" content="Gallery: photos of dishes, the café and the farms we work with.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Specific styles for Gallery page hero */
+    .gallery-hero {
+      background-image: url('https://images.unsplash.com/photo-1542442438-6677f54c9354?auto=format&fit=crop&w=1600&q=80');
+      height: 40vh;
+      min-height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-hero h1 {
+      position: relative;
+      z-index: 2;
+      color: var(--text-light);
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .gallery-hero .hero-overlay {
+      background: rgba(25, 92, 81, 0.75); /* Darker green overlay */
+    }
+  </style>
+</head>
+<body>
+  <header id="siteHeader" class="site-header small scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="logo-placeholder" title="Logo"> </div>
+        <span class="brand-name">SOUL RestroCafé</span>
+      </a>
+      <button id="navToggle4" class="nav-toggle" aria-label="Toggle navigation"><span class="burger"></span></button>
+      <nav id="mainNav4" class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="index.html#contact" class="btn btn-accent nav-cta">Visit Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery-hero">
+      <div class="hero-overlay"></div>
+      <h1>Our Visual Story</h1>
+    </section>
+
+    <section id="full-gallery" class="section">
+      <div class="container text-center reveal">
+        <p class="tagline">Grounded & Honest</p>
+        <h2 class="section-heading">The Café, The Plates, The Farms</h2>
+      </div>
+      <div class="container gallery-grid">
+        <div class="gallery-image reveal"><img src="https://images.unsplash.com/photo-1504754524776-ab7365313917?auto=format&fit=crop&w=1200&q=80" alt="Gallery 1" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.05s;"><img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" alt="Gallery 2" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.1s;"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80" alt="Gallery 3" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.15s;"><img src="https://images.unsplash.com/photo-1498575207490-4a906f02a0e9?auto=format&fit=crop&w=1200&q=80" alt="Gallery 4" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.2s;"><img src="https://images.unsplash.com/photo-1508253578933-e8cd3847c5c4?auto=format&fit=crop&w=1200&q=80" alt="Gallery 5" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.25s;"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80" alt="Gallery 6" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.3s;"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=80" alt="Gallery 7" loading="lazy"> </div>
+        <div class="gallery-image reveal" style="transition-delay: 0.35s;"><img src="https://images.unsplash.com/photo-1498575207490-4a906f02a0e9?auto=format&fit=crop&w=1200&q=80" alt="Gallery 8" loading="lazy"> </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container footer-inner">
+      <div class="brand-sm">
+        <div class="logo-placeholder footer-logo" title="Logo"> </div>
+        <div>
+          <strong>SOUL RestroCafé</strong><br>
+          <small>Satvik • Farm-Fresh • Transparent</small>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+
+      <div class="copyright">
+        <small>© <span id="yearGallery"></span> SOUL RestroCafé — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919999999999&text=Hello%20SOUL%20RestroCafe" target="_blank" aria-label="Chat with us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339.4 55.4 286.1 32 223.7 32c-122.4 0-222 99.6-222 222 0 39.1 10.3 77.2 30.7 110.3l-31.9 98.7 101.4-32a222 222 0 0 0 110.2 29.8h.3c122.4 0 222-99.6 222-222 0-51.5-17.1-99.7-48.4-138.8zM223.7 452c-33.4 0-66.2-8.5-94-23l-6.7-3.9-6.3 19.5-27-8.8 32.8-10.7 7.7-2.9-6.3-4.5c-22.3-16.7-41.2-38-55.8-61.9-46.3-77.9-20.9-178.6 44.8-232.8 59.8-51.7 137.4-71.7 215.1-55.4 69.8 14.1 133 65.1 154.2 136.9 23.6 77.7-.3 162.7-56.1 226.7-65 72.3-161.7 87.8-241.6 49.3z" fill="white"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

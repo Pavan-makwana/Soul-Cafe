@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — SOUL RestroCafé</title>
+  <meta name="description" content="About SOUL RestroCafé — our mission, vision, and the farmers we work with." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Specific styles for About page hero */
+    .about-hero {
+      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e641bec6?auto=format&fit=crop&w=1600&q=80');
+      height: 40vh;
+      min-height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      background-size: cover;
+      background-position: center;
+    }
+    .about-hero h1 {
+      position: relative;
+      z-index: 2;
+      color: var(--text-light);
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .about-hero .hero-overlay {
+      opacity: 0.75;
+    }
+    .story-vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 992px) {
+      .story-vision-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="siteHeader" class="site-header small scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <div class="logo-placeholder" title="Logo"> </div>
+        <span class="brand-name">SOUL RestroCafé</span>
+      </a>
+      <button id="navToggle2" class="nav-toggle" aria-label="Toggle navigation"><span class="burger"></span></button>
+      <nav id="mainNav2" class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="index.html#contact" class="btn btn-accent nav-cta">Visit Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="hero-overlay"></div>
+      <h1>Our Soulful Story</h1>
+    </section>
+
+    <section id="story" class="section">
+      <div class="container text-center reveal">
+        <p class="tagline">Our Roots</p>
+        <h2 class="section-heading">Story, Mission, & Vision</h2>
+      </div>
+      <div class="container story-vision-grid">
+        <article class="reveal">
+          <h3>Our Story</h3>
+          <p>SOUL RestroCafé was born from a simple desire: to bring the unadulterated goodness of farm-fresh, Satvik food to the city table. Tired of processed ingredients and lack of transparency, our founder, a fourth-generation organic farmer, decided to bridge the gap between rural honesty and urban demand.</p>
+          <p>We started with a handful of trusted farmer friends and a commitment to honor ancient Indian dining principles—purity, mindfulness, and nourishment.</p>
+        </article>
+        <article class="reveal" style="transition-delay: 0.1s;">
+          <h3>Mission & Vision</h3>
+          <p><strong>Mission:</strong> To serve food that promotes physical wellness and mental clarity by using 100% organic, locally-sourced, and seasonal ingredients, prepared with positive intention.</p>
+          <p><strong>Vision:</strong> To be the most trusted and transparent dining destination, inspiring a movement towards mindful consumption and supporting small-scale, sustainable farming communities across the region.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="regions" class="section bg-secondary-light">
+      <div class="container text-center">
+        <p class="tagline reveal">Grounding Our Food</p>
+        <h2 class="section-heading reveal">The Heart of Our Sourcing Network</h2>
+        <div class="source-grid">
+          <article class="card source-card reveal">
+            <img src="https://images.unsplash.com/photo-1498837167664-bf83890f5509?auto=format&fit=crop&w=1000&q=80" alt="Kachchh farmer" loading="lazy"> <div class="card-body">
+              <h5 id="kachchh">Kachchh</h5>
+              <p class="muted">Organic desert produce: Dates, dry fruits, and Bajra (pearl millet).</p>
+            </div>
+          </article>
+
+          <article class="card source-card reveal" style="transition-delay: 0.1s;">
+            <img src="https://images.unsplash.com/photo-1508253578933-e8cd3847c5c4?auto=format&fit=crop&w=1000&q=80" alt="Saurashtra farmer" loading="lazy"> <div class="card-body">
+              <h5 id="saurashtra">Saurashtra</h5>
+              <p class="muted">Pulses, seasonal vegetables, and traditional cold-pressed oils.</p>
+            </div>
+          </article>
+
+          <article class="card source-card reveal" style="transition-delay: 0.2s;">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1000&q=80" alt="Dang farmer" loading="lazy"> <div class="card-body">
+              <h5 id="dang">Dang</h5>
+              <p class="muted">Forest-rich produce: Wild herbs, spices, and ethically sourced honey.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container footer-inner">
+      <div class="brand-sm">
+        <div class="logo-placeholder footer-logo" title="Logo"> </div>
+        <div>
+          <strong>SOUL RestroCafé</strong><br>
+          <small>Satvik • Farm-Fresh • Transparent</small>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+
+      <div class="copyright">
+        <small>© <span id="yearAbout"></span> SOUL RestroCafé — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919999999999&text=Hello%20SOUL%20RestroCafe" target="_blank" aria-label="Chat with us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339.4 55.4 286.1 32 223.7 32c-122.4 0-222 99.6-222 222 0 39.1 10.3 77.2 30.7 110.3l-31.9 98.7 101.4-32a222 222 0 0 0 110.2 29.8h.3c122.4 0 222-99.6 222-222 0-51.5-17.1-99.7-48.4-138.8zM223.7 452c-33.4 0-66.2-8.5-94-23l-6.7-3.9-6.3 19.5-27-8.8 32.8-10.7 7.7-2.9-6.3-4.5c-22.3-16.7-41.2-38-55.8-61.9-46.3-77.9-20.9-178.6 44.8-232.8 59.8-51.7 137.4-71.7 215.1-55.4 69.8 14.1 133 65.1 154.2 136.9 23.6 77.7-.3 162.7-56.1 226.7-65 72.3-161.7 87.8-241.6 49.3z" fill="white"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
