@@ -3,10 +3,10 @@
    --------------------------------------------------- */
 
 :root {
-  --primary-color: #0f473e;       /* deep green */
-  --secondary-color: #d9b382;     /* warm beige/brown */
-  --light-bg-color: #f7f3ee;      /* off-white/light sand */
-  --card-bg-dark: #195c51;        /* dark card bg */
+  --primary-color: #0f473e; /* deep green */
+  --secondary-color: #d9b382; /* warm beige/brown */
+  --light-bg-color: #f7f3ee; /* off-white/light sand */
+  --card-bg-dark: #195c51; /* dark card bg */
   --muted-color: #6d6d6d;
   --text-dark: #1a1a1a;
   --text-light: #f0f0f0;
@@ -22,11 +22,21 @@ body {
 }
 
 /* Custom Component Coloring */
-.bg-primary-custom { background-color: var(--primary-color) !important; }
-.text-primary-custom { color: var(--primary-color) !important; }
-.bg-secondary-custom { background-color: var(--secondary-color) !important; }
-.text-secondary-custom { color: var(--secondary-color) !important; }
-.bg-card-dark-custom { background-color: var(--card-bg-dark) !important; }
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+.bg-secondary-custom {
+  background-color: var(--secondary-color) !important;
+}
+.text-secondary-custom {
+  color: var(--secondary-color) !important;
+}
+.bg-card-dark-custom {
+  background-color: var(--card-bg-dark) !important;
+}
 
 /* Custom Logo Placeholder for Navbar */
 .logo-placeholder {
@@ -90,38 +100,33 @@ body {
   color: var(--text-light);
   padding-top: var(--nav-height);
 }
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-color);
-  opacity: 0.85; /* Slight transparency for background image if used */
-  z-index: 1;
-}
+
 
 /* Footer & FAB */
 .whatsapp-fab {
   position: fixed;
   right: 25px;
   bottom: 25px;
-  background: #25D366;
+  background: #25d366;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   z-index: 999;
   transition: transform 0.3s ease;
 }
 .whatsapp-fab:hover {
   transform: scale(1.1);
 }
-.whatsapp-fab svg { display: block; fill: white; width: 24px; height: 24px; }
-
+.whatsapp-fab svg {
+  display: block;
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
 
 /* Custom Styling for Headings/Text */
 .tagline {
@@ -141,14 +146,55 @@ body {
 
 /* Custom Nav/Header to ensure branding colors are maintained */
 .navbar-brand-name {
-    color: var(--primary-color); /* Default color for scrolled/solid header */
+  color: var(--primary-color); /* Default color for scrolled/solid header */
 }
 .site-header {
-    background-color: #fff !important; /* Ensure white background for solid Bootstrap header */
+  background-color: #fff !important; /* Ensure white background for solid Bootstrap header */
 }
 
 /* Card image height consistency */
 .card-img-top {
-    height: 220px;
-    object-fit: cover;
+  height: 220px;
+  object-fit: cover;
+}
+
+.footer a.btn-link {
+  color: #eff3ee;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a.btn-link:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.btn-square {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer h5 {
+  letter-spacing: 1px;
+}
+
+.footer {
+  background: #111;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Use the original 450px height */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%; /* Important: Fills the 450px parent */
+  border: none;
 }
