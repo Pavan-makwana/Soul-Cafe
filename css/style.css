@@ -1,7 +1,5 @@
 /* ---------------------------------------------------
-   SOUL RestroCafé — Theme (Green & Brown)
-   Combined inspiration: Amul Organic, Geetanjali Dairy, Drivesync.tech
-   Author: AI Generation
+   SOUL RestroCafé — Custom Styles for Bootstrap 5
    --------------------------------------------------- */
 
 :root {
@@ -13,186 +11,74 @@
   --text-dark: #1a1a1a;
   --text-light: #f0f0f0;
   --font-family: "Poppins", sans-serif;
-  --max-width: 1200px;
   --nav-height: 70px;
-  --transition-speed: 0.3s;
 }
 
-/* Reset & base */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* Ensure Poppins is used everywhere */
 body {
   font-family: var(--font-family);
   background: var(--light-bg-color);
   color: var(--text-dark);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* container utility */
-.container {
-  width: 90%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+/* Custom Component Coloring */
+.bg-primary-custom { background-color: var(--primary-color) !important; }
+.text-primary-custom { color: var(--primary-color) !important; }
+.bg-secondary-custom { background-color: var(--secondary-color) !important; }
+.text-secondary-custom { color: var(--secondary-color) !important; }
+.bg-card-dark-custom { background-color: var(--card-bg-dark) !important; }
 
-/* Typography */
-h1, h2, h3, h4, h5 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
-  color: var(--primary-color);
-}
-h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-}
-.tagline {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--secondary-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.muted { color: var(--muted-color); font-size: 0.95rem; }
-.text-center { text-align: center; }
-
-/* Links and Buttons */
-a { color: var(--primary-color); text-decoration: none; transition: color var(--transition-speed); }
-a:hover { color: var(--secondary-color); }
-
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all var(--transition-speed) ease;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-.btn-primary {
-  background: var(--primary-color);
-  color: var(--text-light);
-  border-color: var(--primary-color);
-}
-.btn-primary:hover {
-  background: var(--card-bg-dark);
-  border-color: var(--card-bg-dark);
-}
-.btn-accent {
-  background: var(--secondary-color);
-  color: var(--text-dark);
-  border-color: var(--secondary-color);
-}
-.btn-accent:hover {
-  background: var(--primary-color);
-  color: var(--text-light);
-  border-color: var(--primary-color);
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-.btn-ghost:hover {
-  background: var(--primary-color);
-  color: var(--text-light);
-}
-
-/* Layout */
-.section {
-  padding: 80px 0;
-  overflow: hidden; /* For reveal animations */
-}
-.bg-secondary-light { background-color: var(--light-bg-color); }
-
-/* Header/Navbar */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-  background-color: transparent; /* Start transparent */
-}
-.site-header.scrolled {
-  background-color: var(--primary-color); /* Turn solid on scroll */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: var(--nav-height);
-}
-.brand {
-  display: flex;
-  align-items: center;
-  color: var(--text-light);
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-.site-header.scrolled .brand, .site-header.scrolled .nav-link {
-  color: var(--text-light);
-}
-
+/* Custom Logo Placeholder for Navbar */
 .logo-placeholder {
-  width: 45px;                     /* slightly larger for better proportion */
+  width: 45px;
   height: 45px;
   background: var(--secondary-color);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;                /* ensures image doesn't overflow */
-  flex-shrink: 0;                  /* keeps logo size constant */
-  margin-right: 12px ;
+  overflow: hidden;
+  flex-shrink: 0;
 }
-
-.logo {
+/* Ensure logo image scales inside */
+.logo-placeholder .logo {
   width: 100%;
   height: 100%;
-  object-fit: contain;             /* fits image nicely without cropping */
+  object-fit: contain;
 }
 
-.brand-name {
-  font-weight: 700;
+/* Custom Buttons (using original class names for reference) */
+.btn-primary-custom {
+  background: var(--primary-color);
   color: var(--text-light);
-  font-size: 1.25rem;
-  letter-spacing: 0.3px;
+  border-color: var(--primary-color);
 }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.btn-primary-custom:hover {
+  background: var(--card-bg-dark);
+  border-color: var(--card-bg-dark);
 }
-.nav-link {
-  font-weight: 600;
-  color: var(--text-light); /* Default color for transparent header */
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  transition: color var(--transition-speed);
+.btn-accent-custom {
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  border-color: var(--secondary-color);
 }
-.nav-link:hover {
-  color: var(--secondary-color);
+.btn-accent-custom:hover {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border-color: var(--primary-color);
 }
-.site-header.scrolled .nav-link {
+.btn-ghost-custom {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btn-ghost-custom:hover {
+  background: var(--primary-color);
   color: var(--text-light);
 }
-.site-header.scrolled .nav-link:hover {
-  color: var(--secondary-color);
-}
-.nav-cta { margin-left: 10px; }
 
-/* Hero Section */
+/* Hero Section (Replicating full-height background) */
 .hero-section {
   height: 100vh;
   min-height: 600px;
@@ -202,6 +88,7 @@ a:hover { color: var(--secondary-color); }
   align-items: center;
   position: relative;
   color: var(--text-light);
+  padding-top: var(--nav-height);
 }
 .hero-overlay {
   position: absolute;
@@ -209,180 +96,17 @@ a:hover { color: var(--secondary-color); }
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--primary-color);  /* Deep Green overlay */
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  padding-top: var(--nav-height);
-}
-.hero-content h1 {
-  color: var(--text-light);
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-.hero-content .tagline {
-  color: var(--secondary-color);
-  margin-bottom: 30px;
-}
-.hero-buttons {
-  display: flex;
-  gap: 15px;
+  background: var(--primary-color);
+  opacity: 0.85; /* Slight transparency for background image if used */
+  z-index: 1;
 }
 
-/* Cards (Drivesync.tech inspired) */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-}
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-.card-body {
-  padding: 20px;
-}
-.source-card { text-align: center; }
-.source-card h5 { margin-top: 5px; color: var(--card-bg-dark); }
-
-/* Grid Layouts */
-.source-grid, .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 40px;
-}
-.gallery-image {
-  overflow: hidden;
-  border-radius: 8px;
-  position: relative;
-}
-.gallery-image img {
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.gallery-image:hover img {
-  transform: scale(1.05);
-}
-
-/* About / Philosophy */
-.philosophy-block {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-.philosophy-content h3 {
-  font-size: 2rem;
-  color: var(--secondary-color);
-}
-.philosophy-image img {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Testimonials */
-.testimonial-card {
-  background: #fff;
-  padding: 30px;
-  border-left: 5px solid var(--secondary-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-.testimonial-card p {
-  font-style: italic;
-  margin-bottom: 15px;
-}
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-.author { font-weight: 600; color: var(--primary-color); }
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 40px;
-  align-items: stretch;
-  margin-top: 40px;
-}
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.map-wrapper {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  min-height: 400px;
-}
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.info-card {
-  background: var(--card-bg-dark);
-  color: var(--text-light);
-  padding: 30px;
-  border-radius: 12px;
-}
-.info-card h4 { color: var(--secondary-color); margin-bottom: 15px; }
-.info-card p { margin-bottom: 10px; }
-.info-card a { color: var(--secondary-color); }
-
-/* footer */
-.site-footer {
-  background: var(--card-bg-dark);
-  color: var(--text-light);
-  padding: 30px 0;
-}
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.brand-sm {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.footer-logo { background: var(--secondary-color); }
-.footer-links a {
-  color: var(--text-light);
-  margin-left: 20px;
-  font-size: 0.9rem;
-}
-.footer-links a:hover { color: var(--secondary-color); }
-.copyright small { font-size: 0.8rem; }
-
-/* whatsapp fab */
+/* Footer & FAB */
 .whatsapp-fab {
   position: fixed;
   right: 25px;
   bottom: 25px;
-  background: #25D366; /* WhatsApp Green */
+  background: #25D366;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -399,137 +123,32 @@ a:hover { color: var(--secondary-color); }
 .whatsapp-fab svg { display: block; fill: white; width: 24px; height: 24px; }
 
 
-/* Reveal Animations (Drivesync.tech inspired) */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Custom Styling for Headings/Text */
+.tagline {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile Nav */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 101;
-}
-.burger {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text-light);
-  position: relative;
-  transition: all 0.3s;
-}
-.burger::before, .burger::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: var(--text-light);
-  transition: all 0.3s;
-}
-.burger::before { top: -8px; }
-.burger::after { top: 8px; }
-
-/* Mobile nav scrolled color fix */
-.site-header.scrolled .burger, .site-header.scrolled .burger::before, .site-header.scrolled .burger::after {
-  background: var(--text-light);
+.section-heading {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
-
-/* Media Queries */
-@media (max-width: 992px) {
-  h2 { font-size: 2rem; }
-
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100vh;
-    background: var(--primary-color);
-    padding: 80px 20px 20px;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
-    transform: translateX(100%);
-    transition: transform 0.4s ease;
-    z-index: 90;
-    align-items: flex-start;
-  }
-  .nav-links.open { transform: translateX(0); display: flex; }
-  .nav-link { color: var(--text-light) !important; padding: 10px 0; width: 100%; }
-  .nav-cta { margin-left: 0; margin-top: 10px; width: 100%; text-align: center; }
-
-  .hero-content h1 { font-size: 2.5rem; }
-  .hero-section { background-attachment: scroll; }
-
-  .philosophy-block { flex-direction: column; }
-  .philosophy-image, .philosophy-content { width: 100%; }
-
-  .contact-grid { grid-template-columns: 1fr; }
-  .map-wrapper { min-height: 300px; order: 1; }
-  .contact-info { order: 2; }
-  .info-card { padding: 20px; }
-
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-links { margin-top: 15px; }
-  .footer-links a { margin: 0 10px; }
+/* Custom Nav/Header to ensure branding colors are maintained */
+.navbar-brand-name {
+    color: var(--primary-color); /* Default color for scrolled/solid header */
+}
+.site-header {
+    background-color: #fff !important; /* Ensure white background for solid Bootstrap header */
 }
 
-@media (max-width: 576px) {
-  .hero-buttons { flex-direction: column; }
-  .btn { width: 100%; text-align: center; }
-  .section { padding: 60px 0; }
+/* Card image height consistency */
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
 }
-@media (max-width: 992px) {
-  .mobile-social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin-top: 35px;
-    width: 100%;
-  }
-
-  .social-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-    transition: all 0.3s ease;
-    color: #fff; /* Ensures icons show on any background */
-  }
-
-  .social-icon.whatsapp {
-    background-color: #25D366;
-  }
-  .social-icon.call {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
-  }
-  .social-icon.email {
-    background-color: var(--card-bg-dark);
-  }
-  .social-icon.insta {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  }
-
-  .social-icon:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
-  }
-}
-
-
