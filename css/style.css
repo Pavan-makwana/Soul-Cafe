@@ -1,44 +1,109 @@
 /* ---------------------------------------------------
-   SOUL RestroCafé — Custom Styles for Bootstrap 5
+   SOUL Restro Café — Updated Starbucks-Inspired Styling
    --------------------------------------------------- */
 
 :root {
-  --primary-color: #0f473e; /* deep green */
-  --secondary-color: #d9b382; /* warm beige/brown */
-  --light-bg-color: #f7f3ee; /* off-white/light sand */
-  --card-bg-dark: #195c51; /* dark card bg */
-  --muted-color: #6d6d6d;
+  --primary-color: #0f473e;        /* Deep forest green */
+  --secondary-color: #d9b382;      /* Warm beige-golden tone */
+  --light-bg-color: #f7f3ee;       /* Creamy off-white */
+  --card-bg-dark: #195c51;         /* Slightly lighter green for cards */
   --text-dark: #1a1a1a;
   --text-light: #f0f0f0;
   --font-family: "Poppins", sans-serif;
   --nav-height: 70px;
 }
 
-/* Ensure Poppins is used everywhere */
+/* ----------------------------
+   Global Reset & Body
+---------------------------- */
 body {
   font-family: var(--font-family);
-  background: var(--light-bg-color);
-  color: var(--text-dark);
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
-/* Custom Component Coloring */
-.bg-primary-custom {
-  background-color: var(--primary-color) !important;
-}
-.text-primary-custom {
-  color: var(--primary-color) !important;
-}
-.bg-secondary-custom {
+/* ----------------------------
+   Navbar
+---------------------------- */
+.navbar {
   background-color: var(--secondary-color) !important;
-}
-.text-secondary-custom {
-  color: var(--secondary-color) !important;
-}
-.bg-card-dark-custom {
-  background-color: var(--card-bg-dark) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Custom Logo Placeholder for Navbar */
+.navbar-brand {
+  color: var(--primary-color) !important;
+  font-weight: 800;
+}
+
+.navbar-nav .nav-link {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* ----------------------------
+   Navbar Visit Us Button Hover
+---------------------------- */
+.navbar .btn-visit {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-visit:hover {
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* ----------------------------
+   Social Icons in Mobile Navbar
+---------------------------- */
+.nav-social-icons {
+  display: none; /* hidden by default on desktop */
+}
+
+.nav-social-icons a {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-social-icons a:hover {
+  color: #ffffff;
+  background-color: var(--primary-color);
+}
+
+/* Show only on mobile */
+@media (max-width: 992px) {
+  .nav-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+}
+
+
+/* ----------------------------
+   Logo Styling
+---------------------------- */
 .logo-placeholder {
   width: 45px;
   height: 45px;
@@ -50,59 +115,286 @@ body {
   overflow: hidden;
   flex-shrink: 0;
 }
-/* Ensure logo image scales inside */
+
 .logo-placeholder .logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Custom Buttons (using original class names for reference) */
-.btn-primary-custom {
-  background: var(--primary-color);
-  color: var(--text-light);
-  border-color: var(--primary-color);
-}
-.btn-primary-custom:hover {
-  background: var(--card-bg-dark);
-  border-color: var(--card-bg-dark);
-}
-.btn-accent-custom {
-  background: var(--secondary-color);
-  color: var(--text-dark);
-  border-color: var(--secondary-color);
-}
-.btn-accent-custom:hover {
-  background: var(--primary-color);
-  color: var(--text-light);
-  border-color: var(--primary-color);
-}
-.btn-ghost-custom {
-  background: transparent;
+/* ----------------------------
+   Buttons
+---------------------------- */
+.btn-accent-custom,
+.btn-accent {
+  background-color: var(--secondary-color);
   color: var(--primary-color);
-  border-color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
 }
-.btn-ghost-custom:hover {
-  background: var(--primary-color);
+
+.btn-accent-custom:hover,
+.btn-accent:hover {
+  background-color: #bfa075;
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
+.btn-primary-custom {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--card-bg-dark);
   color: var(--text-light);
 }
 
-/* Hero Section (Replicating full-height background) */
+/* ----------------------------
+   Hero Section 
+---------------------------- */
 .hero-section {
+  position: relative;
   height: 100vh;
   min-height: 600px;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay behind text */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  opacity: 0.65; /* slightly transparent for visibility */
+  z-index: 1; /* sits below caption */
+}
+
+/* Text Layer */
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2; /* above overlay */
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: flex-start;
+  text-align: left;
   color: var(--text-light);
-  padding-top: var(--nav-height);
+}
+
+.carousel-caption .tagline {
+  color: var(--secondary-color);
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-light);
+}
+
+.carousel-caption p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .carousel-caption p {
+    text-align: center;
+  }
+  .carousel-caption {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ----------------------------
+   Section Headings
+---------------------------- */
+.section-heading {
+  color: var(--secondary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.bg-secondary-light {
+  background-color: var(--light-bg-color);
+  color: var(--text-dark);
+}
+
+.bg-secondary-light .section-heading {
+  color: var(--primary-color);
+}
+
+.bg-secondary-light p,
+.bg-secondary-light .lead {
+  color: var(--text-dark) !important;
+}
+
+/* ----------------------------
+   Cards & Menus
+---------------------------- */
+.card-dark {
+  background-color: var(--card-bg-dark);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-dark h5 {
+  color: var(--secondary-color);
+}
+
+.card-dark p {
+  color: #dcdcdc !important;
+}
+
+.item-price {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* ----------------------------
+   Gallery
+---------------------------- */
+.gallery-image {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.gallery-image img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------------
+   Map Section
+---------------------------- */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
 }
 
 
-/* Footer & FAB */
+/* FOOTER SECTION */
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-text {
+  color: var(--primary-color);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.footer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #ffffff !important;
+}
+
+.social-icon i {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #ffffff;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+/* CONTACT CARD LINKS FIX */
+.bg-card-dark-custom a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.bg-card-dark-custom a:hover {
+  
+  color: var(--primary-color) !important;
+}
+
+/* ----------------------------
+   WhatsApp Floating Button
+---------------------------- */
 .whatsapp-fab {
   position: fixed;
   right: 25px;
@@ -118,57 +410,20 @@ body {
   z-index: 999;
   transition: transform 0.3s ease;
 }
+
 .whatsapp-fab:hover {
   transform: scale(1.1);
 }
+
 .whatsapp-fab svg {
-  display: block;
   fill: white;
   width: 24px;
   height: 24px;
 }
 
-/* Custom Styling for Headings/Text */
-.tagline {
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--secondary-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.section-heading {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-
-/* Custom Nav/Header to ensure branding colors are maintained */
-.navbar-brand-name {
-  color: var(--primary-color); /* Default color for scrolled/solid header */
-}
-.site-header {
-  background-color: #fff !important; /* Ensure white background for solid Bootstrap header */
-}
-
-/* Card image height consistency */
-.card-img-top {
-  height: 220px;
-  object-fit: cover;
-}
-
-.footer a.btn-link {
-  color: #eff3ee;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer a.btn-link:hover {
-  color: #fff;
-  padding-left: 5px;
-}
-
+/* ----------------------------
+   Utilities
+---------------------------- */
 .btn-square {
   width: 36px;
   height: 36px;
@@ -177,24 +432,10 @@ body {
   justify-content: center;
 }
 
-.footer h5 {
+.tagline {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.footer {
-  background: #111;
-}
-
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 450px; /* Use the original 450px height */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%; /* Important: Fills the 450px parent */
-  border: none;
 }
