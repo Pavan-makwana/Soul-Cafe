@@ -24,6 +24,15 @@ body {
   margin: 0;
   padding: 0;
 }
+.section-our-story {
+  background-color: var(--light-bg-color);
+  padding: 60px 30px;
+  box-shadow: none;
+  
+}
+i{
+  color: var(--primary-color);
+}
 
 /* ----------------------------
    Navbar
@@ -446,7 +455,6 @@ body {
    Gallery Hero Section Fix
 ---------------------------- */
 .gallery-hero {
-  background-image: url("https://images.unsplash.com/photo-1542442438-6677f54c9354?auto=format&fit=crop&w=1600&q=80");
   height: 70vh;
   min-height: 400px;
   position: relative;
@@ -510,24 +518,96 @@ body {
 }
 
 /* ----------------------------
-   Gallery Section 
+   Gallery Hero Section
+---------------------------- */
+.gallery-hero {
+  height: 70vh;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 120px; /* pushes content below fixed navbar */
+}
+
+.gallery-hero .hero-overlay {
+  background-color: var(--primary-color);
+  opacity: 0.75;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.gallery-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.gallery-hero .tagline {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-hero .hero-subtext {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Responsive Text Adjustments */
+@media (max-width: 768px) {
+  .gallery-hero {
+    padding-top: 100px;
+  }
+  .gallery-hero .tagline {
+    font-size: 1.5rem;
+  }
+  .gallery-hero .hero-subtext {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ----------------------------
+   Gallery Section (Fixed 300x300)
 ---------------------------- */
 .gallery-container {
   padding: 3rem 0;
 }
 
-/* Image box */
 .gallery-image {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  width: 300px; /* fixed width */
+  height: 300px; /* fixed height */
+  margin: 0 auto; /* centers in column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Image styling */
+/* Image styling - fixed size */
 .gallery-image img {
   width: 100%;
-  height: auto; /* keep proportions */
+  height: 100%;
+  object-fit: cover; /* ✅ ensures consistent look without distortion */
   border-radius: 10px;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
@@ -540,6 +620,9 @@ body {
 
 /* Column spacing */
 .gallery-container .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
 }
 
@@ -550,24 +633,30 @@ body {
   }
 }
 
-/* Optional — uniform height on larger screens */
-@media (min-width: 769px) {
-  .gallery-image img {
-    max-height: 300px;
-    object-fit: cover;
-  }
-}
-
-/* Responsive spacing */
+/* Responsive Spacing */
 @media (max-width: 992px) {
-  .gallery-image img {
-    height: auto;
-    /* width: auto; */
-  }
-}
-
-@media (max-width: 768px) {
   .gallery-container {
     padding: 2rem 0;
   }
+  .gallery-image {
+    width: 300px;
+    height: 300px;
+  }
 }
+
+/* /* Philosophy Section Icon Styling */
+/* .philosophy-icon {
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px;
+  border-radius: 30%;
+  transition: all 0.3s ease-in-out;
+}
+
+.philosophy-icon:hover {
+  
+  transform: scale(1.1);
+  background: var(--primary-color);
+  color: var(--secondary-color);
+} */
+ 
