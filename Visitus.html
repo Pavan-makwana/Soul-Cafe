@@ -58,6 +58,10 @@
         height: 100%; /* Important: Fills the 450px parent */
         border: none;
       }
+      .card-vu {
+        height: 250px;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
@@ -96,9 +100,7 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto d-flex align-items-lg-center">
             <li class="nav-item">
-              <a
-                href="index.html"
-                class="nav-link fw-bold text-primary-custom "
+              <a href="index.html" class="nav-link fw-bold text-primary-custom"
                 >Home</a
               >
             </li>
@@ -158,56 +160,180 @@
     </header>
 
     <!--  HERO SECTION -->
-  <section class="position-relative">
-    <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=1600"
-      class="img-fluid w-100" style="height: 60vh; object-fit: cover; filter: brightness(0.7);" />
+    <section class="position-relative">
+      <img
+        src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=1600"
+        class="img-fluid w-100"
+        style="height: 60vh; object-fit: cover; filter: brightness(0.7)"
+      />
 
-    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-      <h1 class="fw-bold display-4">Get In Touch</h1>
-      <p class="lead ">
-            Explore our café location, check directions, and read genuine Google
-            reviews.
-          </p>
-    </div>
-  </section>
-    <div style="padding-top: 80px">
-      <section class="container py-5">
-
-
-        <div class="row g-4 align-items-stretch">
-          <div class="col-lg-8">
-            <div class="map-wrapper shadow-lg rounded-3 overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.335754303028!2d72.64657199999999!3d23.157942800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e81000b8ac83f%3A0xeadc185255301d69!2sSOUL%20Resto%20Cafe!5e0!3m2!1sen!2sin!4v1762294916036!5m2!1sen!2sin"
-                style="border: 0; width: 100%; height: 100%; display: block"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              >
-              </iframe>
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-center text-white"
+      >
+        <h1 class="fw-bold display-4">Get In Touch</h1>
+        <p class="lead">
+          Explore our café location, check directions, and read genuine Google
+          reviews.
+        </p>
+      </div>
+    </section>
+    <div style="padding-top: 30px">
+      <section id="philosophy" class="py-5">
+        <div class="container text-center py-5">
+          <div class="row align-items-center g-4 g-lg-5 philosophy-block">
+            <!-- Satvik -->
+            <div class="col-lg-3 card-vu">
+              <article class="card h-100 shadow-sm border-0">
+                <i class="fa-solid fa-seedling mt-5 fa-2x philosophy-icon"></i>
+                <div class="card-body mt-4">
+                  <h5 class="card-title text-primary-custom mb-4">Visit Us</h5>
+                  <p class="card-text text-muted">
+                    Silicon Hills, 1, PDPU Rd, Raysan, Gandhinagar, Gujarat
+                    382007
+                  </p>
+                </div>
+              </article>
             </div>
-          </div>
 
-          <div class="col-lg-4" >
-            <div class="d-flex flex-column h-100">
-              <div class="bg-card-dark-custom  p-4 rounded-3 shadow-sm flex-grow-1 " style="border: 2px solid white;background-color: var(--secondary-color);color: var(--primary-color);">
-                <h3 class="text-secondary-custom mb-3">SOUL RestroCafé</h3>
-                <p class="mb-3"><strong>Address:</strong><br>Opp. Shreeji Bungalows, Kudasan, Gandhinagar, Gujarat 382421</p>
-                <p class="mb-3"><strong>Hours:</strong><br>Mon – Sun: 6:00 AM – 11:00 PM</p>
-                <p class="mb-3"><strong>Phone:</strong> <a href="tel:++918128252603" class="text-light-custom text-decoration-none">+91 8128252603</a></p>
-                <p class="mb-4"><strong>Email:</strong> <a href="mailto:soulrestrocafe25@gmail.com" class="text-secondary-custom text-decoration-none">info@soulrestrocafe.com</a></p>
-                <p class="mb-4"><strong>Instagram:</strong> <a href="https://www.instagram.com/soul.restro.cafe" class="text-secondary-custom text-decoration-none">@soul.restro.cafe</a></p>
-                
-                <a href="https://www.google.com/maps/place/SOUL+Resto+Cafe/@-15.0036172,11.6957016,3.15z/data=!4m17!1m8!3m7!1s0x395e81d963e8408b:0xc1b75770066ce0e1!2sSILICONE+HILLS+APARTMENTS!8m2!3d23.1576072!4d72.6465744!10e5!16s%2Fg%2F11cryf06c1!3m7!1s0x395e81000b8ac83f:0xeadc185255301d69!8m2!3d23.1579428!4d72.646572!9m1!1b1!16s%2Fg%2F11xzyt4bz0?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D"
-                   target="_blank"
-                   class="btn btn-accent-custom mt-2 w-100">Read Our Google Reviews</a>
-              </div>
+            <!-- Organic -->
+            <div class="col-lg-3 card-vu">
+              <article class="card h-100 shadow-sm border-0">
+                <i
+                  class="fa-solid fa-apple-whole mt-5 fa-2x philosophy-icon"
+                ></i>
+                <div class="card-body mt-4">
+                  <h5 class="card-title text-primary-custom mb-4">Call Us</h5>
+                  <p class="card-text text-muted">+91-8128252603</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Urban -->
+            <div class="col-lg-3 card-vu">
+              <article class="card h-100 shadow-sm border-0">
+                <i class="fa-solid fa-city mt-5 fa-2x philosophy-icon"></i>
+                <div class="card-body mt-4">
+                  <h5 class="card-title text-primary-custom mb-4">Email Us</h5>
+                  <p class="card-text text-muted">soulrestrocafe25@gmail.com</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Lifestyle -->
+            <div class="col-lg-3 card-vu">
+              <article class="card h-100 shadow-sm border-0">
+                <i class="fa-solid fa-spa mt-5 fa-2x philosophy-icon"></i>
+                <div class="card-body mt-4">
+                  <h5 class="card-title text-primary-custom mb-4">
+                    Opening Hours
+                  </h5>
+                  <p class="card-text text-muted">
+                    Mon - Sun: 6:00 AM - 11:00 PM Kitchen closes at 11:00 PM
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
+
     </div>
-    <!-- Footer -->
+    <section class="container py-5 ">
+      <div class="row g-4 align-items-stretch ">
+        <div class="col-lg-8 ">
+          <div class="map-wrapper shadow-lg rounded-3 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.335754303028!2d72.64657199999999!3d23.157942800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e81000b8ac83f%3A0xeadc185255301d69!2sSOUL%20Resto%20Cafe!5e0!3m2!1sen!2sin!4v1762294916036!5m2!1sen!2sin"
+              style="border: 0; width: 100%; height: 100%; display: block"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <div class="col-lg-4 part-2">
+          <div class="d-flex flex-column gap-4">
+            <!-- CONNECT WITH US -->
+            <div class="p-4 border rounded-3 shadow-sm bg-white">
+              <h5 class="fw-semibold text-success mb-3">Connect With Us</h5>
+
+              <p class="text-muted mb-4">
+                Follow our journey and stay updated with daily specials, farm
+                stories, and more.
+              </p>
+
+              <!-- Icon Circles -->
+              <div class="d-flex gap-3 mb-3">
+                <a
+                  href="#"
+                  class="social-circle d-flex justify-content-center align-items-center"
+                >
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="social-circle d-flex justify-content-center align-items-center"
+                >
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+
+              <!-- Social Text Links -->
+              <div class="d-flex flex-column gap-2">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-instagram text-success"></i>
+                  <span class="text-dark">@soulrestrocafe</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-facebook text-success"></i>
+                  <span class="text-dark">SOUL RestroCafé</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- WHATSAPP QUICK RESPONSE CARD -->
+            <div
+              class="p-4 rounded-3 text-white whatsapp-card bg-primary-dark"
+            >
+              <h5 class="fw-semibold mb-3">Quick Response?</h5>
+
+              <p class="mb-4 opacity-75">
+                Message us on WhatsApp for instant queries
+              </p>
+
+              <a
+                href="https://wa.me/919999999999"
+                target="_blank"
+                class="btn btn-light w-100 fw-semibold py-2"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section >
+        <section id="contact" class="py-5 bg-primary-dark">
+      <div class="container">
+        <p class="tagline text-center">Connect</p>
+        <div class="  text-center" >
+        <h2 class="section-heading  mb-1">How to Reach US</h2>
+        <p class="tagline text-white">We're located in the heart of Organic Valley,
+          <br> easily accessible by public transport.
+
+Parking available. Look for our logo</p>
+        <a href="about.html#regions" class="btn btn-primary-custom mb-2 mt-2">Find Us</a>
+        </div>
+      </div>
+    </section>
+    <section class="bg-secondary-light py-5">
+
+    </section>
+      <!-- Footer -->
     <footer
       class="container-fluid footer py-5 wow fadeIn"
       data-wow-delay="0.1s"
