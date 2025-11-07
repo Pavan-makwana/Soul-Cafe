@@ -1,241 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu | SOUL RestroCafé</title>
-  <meta name="description" content="View the daily seasonal and satvik menu for SOUL RestroCafé." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu | SOUL RestroCafé</title>
+    <meta
+      name="description"
+      content="View the daily seasonal and satvik menu for SOUL RestroCafé."
+    />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
+    <style>
+      /* Custom styles retained for PageFlip functionality & layout */
+      body {
+        background-color: var(--light-bg-color);
+        font-family: var(--font-family);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Ensure the main content takes up remaining vertical space */
+      .flipbook-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 1rem 4rem; /* Adjusted padding to accommodate fixed navbar */
+      }
 
-  <style>
-    /* Custom styles retained for PageFlip functionality & layout */
-    body {
-      background-color: var(--light-bg-color);
-      font-family: var(--font-family);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    /* Ensure the main content takes up remaining vertical space */
-    .flipbook-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 1rem 4rem; /* Adjusted padding to accommodate fixed navbar */
-    }
+      /* Flipbook appearance */
+      .book {
+        /* max-width: 900px; */
+        max-width: 700px;
+        margin: 0 auto;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+        margin: 0 auto;
+      }
 
-    /* Flipbook appearance */
-    .book {
-      /* max-width: 900px; */
-      margin: 0 auto;
-    }
+      @media (min-width: 1200px) {
+        .book {
+          transform: scale(0.8); /* smaller on large desktops */
+        }
+      }
+      /* Page styles */
+      .page img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
 
-    /* Page styles */
-    .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+      /* Flip Buttons - Using custom classes for colors defined in style.css */
+      .flip-buttons button {
+        border: none;
+        padding: 0.6rem 1.4rem;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-    /* Flip Buttons - Using custom classes for colors defined in style.css */
-    .flip-buttons button {
-      border: none;
-      padding: 0.6rem 1.4rem;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-  
- <!-- Navbar -->
-  <header id="siteHeader" class="navbar navbar-expand-lg navbar-light py-3 shadow-sm fixed-top">
-  <div class="container">
-    <a href="index.html" class="navbar-brand d-flex align-items-center text-decoration-none">
-      <div class="logo-placeholder me-2" title="SOUL RestroCafé Logo">
-        <img src="/img/logo.png" alt="SOUL RestroCafé Logo" class="logo img-fluid" />
-      </div>
-      <span class="fw-bold fs-5 navbar-brand-name">SOUL RestroCafé</span>
-    </a>
-
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto d-flex align-items-lg-center">
-        <li class="nav-item"><a href="index.html" class="nav-link fw-bold text-primary-custom active">Home</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link fw-bold text-dark">About</a></li>
-        <li class="nav-item"><a href="menu.html" class="nav-link fw-bold text-dark">Menu</a></li>
-        <li class="nav-item"><a href="gallery.html" class="nav-link fw-bold text-dark">Gallery</a></li>
-        <li class="nav-item ms-lg-3">
-          <a href="Visitus.html" class="btn btn-visit px-4 py-2 rounded-pill fw-bold">Visit Us</a>
-        </li>
-      </ul>
-
-      <!-- SOCIAL ICONS for MOBILE NAV -->
-      <div class="nav-social-icons mt-3">
-        <a href="https://wa.me/+918128252603" target="_blank" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
+  <body>
+    <!-- Navbar -->
+    <header
+      id="siteHeader"
+      class="navbar navbar-expand-lg navbar-light py-3 shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a
+          href="index.html"
+          class="navbar-brand d-flex align-items-center text-decoration-none"
+        >
+          <div class="logo-placeholder me-2" title="SOUL RestroCafé Logo">
+            <img
+              src="/img/logo.png"
+              alt="SOUL RestroCafé Logo"
+              class="logo img-fluid"
+            />
+          </div>
+          <span class="fw-bold fs-5 navbar-brand-name">SOUL RestroCafé</span>
         </a>
-        <a href="https://www.instagram.com/soul.restro.cafe" target="_blank" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="mailto:soulrestrocafe25@gmail.com" target="_blank" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6" target="_blank" aria-label="Google Maps">
-          <i class="fa-solid fa-map-location-dot"></i>
-        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto d-flex align-items-lg-center">
+            <li class="nav-item">
+              <a
+                href="index.html"
+                class="nav-link fw-bold text-primary-custom active"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link fw-bold text-dark">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="menu.html" class="nav-link fw-bold text-dark">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link fw-bold text-dark"
+                >Gallery</a
+              >
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                href="Visitus.html"
+                class="btn btn-visit px-4 py-2 rounded-pill fw-bold"
+                >Visit Us</a
+              >
+            </li>
+          </ul>
+
+          <!-- SOCIAL ICONS for MOBILE NAV -->
+          <div class="nav-social-icons mt-3">
+            <a
+              href="https://wa.me/+918128252603"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/soul.restro.cafe"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="mailto:soulrestrocafe25@gmail.com"
+              target="_blank"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6"
+              target="_blank"
+              aria-label="Google Maps"
+            >
+              <i class="fa-solid fa-map-location-dot"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
-  <main class="flipbook-container">
-    <h2 class="text-center mb-4 fw-bold section-heading text-primary-custom">Our Food Menu</h2>
+    <main class="flipbook-container">
+      <h2 class="text-center mb-4 fw-bold section-heading text-primary-custom">
+        Our Food Menu
+      </h2>
 
-    <div class="book shadow" id="book">
-      <div class="page" data-density="hard">
-        <img src="/img/SRC_Food_Menu_v2/0000.webp" alt="Cover" />
-      </div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0001.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0002.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0003.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0004.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0005.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0006.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0007.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0008.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0009.webp" alt=""></div>
-      <div class="page"><img src="/img/SRC_Food_Menu_v2/0010.webp" alt=""></div>
-      <div class="page" data-density="hard">
-        <img src="/img/SRC_Food_Menu_v2/0011.webp" alt="Back" />
-      </div>
-    </div>
-
-    <div class="flip-buttons mt-4">
-      <button onclick="turnToPrevPage()" class="btn-primary-custom">← Previous</button>
-      <button onclick="turnToNextPage()" class="btn-primary-custom">Next →</button>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
-  <div class="container py-5">
-    <div class="row g-5">
-
-      <!-- Café Info -->
-      <div class="col-lg-4 col-md-6">
-        <h5 class="footer-heading mb-4">SOUL Café</h5>
-        <p class="footer-text mb-2">
-          <i class="fa-solid fa-location-dot me-3"></i>
-          <a href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6"
-             target="_blank"
-             class="footer-link">
-            Opp. Shreeji Bungalows, Kudasan, Gandhinagar, Gujarat 382421
-          </a>
-        </p>
-        <p class="footer-text mb-2">
-          <i class="fa-solid fa-phone me-3"></i>
-          <a href="tel:+918128252603" class="footer-link">+91 8128252603</a>
-        </p>
-        <p class="footer-text mb-2">
-          <i class="fa-solid fa-envelope me-3"></i>
-          <a href="mailto:soulrestrocafe25@gmail.com" class="footer-link">soulrestrocafe25@gmail.com</a>
-        </p>
-
-        <!-- Icons -->
-        <div class="d-flex pt-3">
-          <a class="btn btn-square btn-light rounded-circle me-2 social-icon" href="https://wa.me/+918128252603" target="_blank" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a class="btn btn-square btn-light rounded-circle me-2 social-icon" href="https://www.instagram.com/soul.restro.cafe" target="_blank" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a class="btn btn-square btn-light rounded-circle me-2 social-icon" href="mailto:soulrestrocafe25@gmail.com" target="_blank" aria-label="Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          <a class="btn btn-square btn-light rounded-circle me-2 social-icon" href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6" target="_blank" aria-label="Google Maps">
-            <i class="fa-solid fa-map-location-dot"></i>
-          </a>
+      <div class="book shadow" id="book">
+        <div class="page" data-density="hard">
+          <img src="/img/SRC_Food_Menu_v2/0000.webp" alt="Cover" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0001.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0002.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0003.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0004.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0005.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0006.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0007.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0008.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0009.webp" alt="" />
+        </div>
+        <div class="page">
+          <img src="/img/SRC_Food_Menu_v2/0010.webp" alt="" />
+        </div>
+        <div class="page" data-density="hard">
+          <img src="/img/SRC_Food_Menu_v2/0011.webp" alt="Back" />
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div class="col-lg-3 col-md-6">
-        <h5 class="footer-heading mb-4">Quick Links</h5>
-        <a class="footer-link d-block mb-1" href="about.html">About Us</a>
-        <a class="footer-link d-block mb-1" href="menu.html">Our Menu</a>
-        <a class="footer-link d-block mb-1" href="gallery.html">Gallery</a>
-        <a class="footer-link d-block mb-1" href="Visitus.html">Visit Us</a>
-        <a class="footer-link d-block" href="#contact">Contact</a>
+      <div class="flip-buttons mt-4">
+        <button onclick="turnToPrevPage()" class="btn-primary-custom">
+          ← Previous
+        </button>
+        <button onclick="turnToNextPage()" class="btn-primary-custom">
+          Next →
+        </button>
       </div>
+    </main>
 
-      <!-- Business Hours -->
-      <div class="col-lg-3 col-md-6">
-        <h5 class="footer-heading mb-4">Business Hours</h5>
-        <p class="footer-text mb-1 fw-semibold">Monday – Sunday</p>
-        <h6 class="footer-text fw-bold">06:00 AM <br> to <br> 11:00 PM</h6>
+    <!-- Footer -->
+    <footer
+      class="container-fluid footer py-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <!-- Café Info -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading mb-4">SOUL Café</h5>
+            <p class="footer-text mb-2">
+              <i class="fa-solid fa-location-dot me-3"></i>
+              <a
+                href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6"
+                target="_blank"
+                class="footer-link"
+              >
+                Opp. Shreeji Bungalows, Kudasan, Gandhinagar, Gujarat 382421
+              </a>
+            </p>
+            <p class="footer-text mb-2">
+              <i class="fa-solid fa-phone me-3"></i>
+              <a href="tel:+918128252603" class="footer-link">+91 8128252603</a>
+            </p>
+            <p class="footer-text mb-2">
+              <i class="fa-solid fa-envelope me-3"></i>
+              <a href="mailto:soulrestrocafe25@gmail.com" class="footer-link"
+                >soulrestrocafe25@gmail.com</a
+              >
+            </p>
+
+            <!-- Icons -->
+            <div class="d-flex pt-3">
+              <a
+                class="btn btn-square btn-light rounded-circle me-2 social-icon"
+                href="https://wa.me/+918128252603"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a
+                class="btn btn-square btn-light rounded-circle me-2 social-icon"
+                href="https://www.instagram.com/soul.restro.cafe"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                class="btn btn-square btn-light rounded-circle me-2 social-icon"
+                href="mailto:soulrestrocafe25@gmail.com"
+                target="_blank"
+                aria-label="Email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a
+                class="btn btn-square btn-light rounded-circle me-2 social-icon"
+                href="https://maps.app.goo.gl/xx6h7T8q2Z1XnKhy6"
+                target="_blank"
+                aria-label="Google Maps"
+              >
+                <i class="fa-solid fa-map-location-dot"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading mb-4">Quick Links</h5>
+            <a class="footer-link d-block mb-1" href="about.html">About Us</a>
+            <a class="footer-link d-block mb-1" href="menu.html">Our Menu</a>
+            <a class="footer-link d-block mb-1" href="gallery.html">Gallery</a>
+            <a class="footer-link d-block mb-1" href="Visitus.html">Visit Us</a>
+            <a class="footer-link d-block" href="#contact">Contact</a>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading mb-4">Business Hours</h5>
+            <p class="footer-text mb-1 fw-semibold">Monday – Sunday</p>
+            <h6 class="footer-text fw-bold">
+              06:00 AM <br />
+              to <br />
+              11:00 PM
+            </h6>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright small text-center mt-5 fw-semibold">
+          © <span id="yearFooter"></span> SOUL RestroCafé — All rights reserved.
+        </div>
       </div>
-    </div>
+    </footer>
+    <a
+      href="https://api.whatsapp.com/send?phone=+918128252603&text=Hello%20SOUL%20RestroCafe"
+      target="_blank"
+      class="whatsapp-fab"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="bi bi-whatsapp fs-3 text-white"></i>
+    </a>
 
-    <!-- Copyright -->
-    <div class="copyright small text-center mt-5 fw-semibold">
-      © <span id="yearFooter"></span> SOUL RestroCafé — All rights reserved.
-    </div>
-  </div>
-</footer>
-  <a href="https://api.whatsapp.com/send?phone=+918128252603&text=Hello%20SOUL%20RestroCafe" target="_blank" class="whatsapp-fab" aria-label="Chat on WhatsApp">
-    <i class="bi bi-whatsapp fs-3 text-white"></i>
-  </a>
+    <script
+      src="https://kit.fontawesome.com/a2c4bfc5b4.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://kit.fontawesome.com/a2c4bfc5b4.js" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById("yearFooter").textContent =
+        new Date().getFullYear();
+    </script>
 
-  <script>
-    document.getElementById("yearFooter").textContent = new Date().getFullYear();
-  </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- <script src="js/main.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module">
+      import { PageFlip } from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
+      const book = document.getElementById("book");
+      const pageFlip = new PageFlip(book, {
+        width: 350,
+        height: 500,
+        size: "fixed",
+        minWidth: 300,
+        maxWidth: 500,
+        minHeight: 400,
+        maxHeight: 700,
+        showCover: true,
+        drawShadow: true,
+        flippingTime: 800,
+        usePortrait: true,
+        autoSize: false,
+        mobileScrollSupport: true,
+      });
 
-  <script type="module">
-    import { PageFlip } from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
-    const book = document.getElementById("book");
-    const pageFlip = new PageFlip(book, {
-      width: 400,
-      height: 600,
-      size: "stretch",
-      minWidth: 250,
-      maxWidth: 600,
-      minHeight: 400,
-      maxHeight: 800,
-      showCover: true,
-      drawShadow: true,
-      flippingTime: 800,
-      usePortrait: true,
-      autoSize: true,
-      mobileScrollSupport: true,
-    });
-    pageFlip.loadFromHTML(document.querySelectorAll(".page"));
-    window.turnToNextPage = () => pageFlip.flipNext();
-    window.turnToPrevPage = () => pageFlip.flipPrev();
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
+      pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+      window.turnToNextPage = () => pageFlip.flipNext();
+      window.turnToPrevPage = () => pageFlip.flipPrev();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
