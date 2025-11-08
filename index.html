@@ -34,6 +34,23 @@
     #philosophy {
       background-color: var(--light-bg-color);
     }
+    .carousel-center{
+      margin: auto;
+      text-align: center;
+    }
+    .carousel-btn{
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border: 1px solid var(--secondary-color);
+    }
+    .carousel-btn-2:hover{
+      border: 1px solid var(--secondary-color);
+    }
+    .carousel-btn-2:hover, .carousel-btn:hover {
+      scale: 1.05;
+      transition: all 0.3s ease-in-out;
+    }
+    
   </style>
   <body>
     <!-- Navbar -->
@@ -153,12 +170,12 @@
               <div class="carousel-caption">
                 <div class="container">
                   <div class="row">
-                    <div class="col-lg-8 text-start">
+                    <div class="col-lg-8 text-start justify-content-center text-center carousel-center">
                       <p class="tagline mb-3">Welcome to Mindful Dining</p>
                       <h1
                         class="text-light fw-bolder mb-3 display-5 animated slideInRight"
                       >
-                        The Purity of Farm-Fresh, Satvik Food.
+                        The Purity of Farm-Fresh,<br> Satvik Food.
                       </h1>
                       <p class="lead text-light mb-4">
                         Experience soulful cuisine crafted from ingredients
@@ -166,11 +183,11 @@
                         ensuring every meal is nourishing and honest.
                       </p>
 
-                      <div class="d-flex gap-3 flex-wrap">
-                        <a href="#source" class="btn btn-primary-custom"
+                      <div class="d-flex gap-3 flex-wrap justify-content-center">
+                        <a href="#source" class="btn btn-primary-custom carousel-btn"
                           >Our Source</a
                         >
-                        <a href="menu.html" class="btn btn-primary-custom"
+                        <a href="menu.html" class="btn btn-primary-custom carousel-btn-2"
                           >Menu Highlights</a
                         >
                       </div>
@@ -190,20 +207,23 @@
               <div class="hero-overlay"></div>
 
               <div class="carousel-caption">
-                <div class="container">
+                <div class="container " >
                   <div class="row">
-                    <div class="col-lg-8 text-start">
+                    <div class="col-lg-8 justify-content-center carousel-center ">
                       <p class="tagline mb-3">Honest Sourcing, Pure Intent</p>
                       <h1
-                        class="display-1 text-white mb-5 animated slideInRight"
+                        class="display-1 text-white mb-4 animated slideInRight"
                       >
                         From Farm to Table, Traceable Ingredients
                       </h1>
-                      <div class="d-flex gap-3 flex-wrap">
-                        <a href="#source" class="btn btn-primary-custom"
+                      <p class="lead text-light mb-4">
+                        From regional fields to your plate, every grain and vegetable is fully traceable, ensuring food that is real, honest, and rooted in nature
+                      </p>
+                      <div class="d-flex gap-3 flex-wrap justify-content-center ">
+                        <a href="#source" class="btn btn-primary-custom carousel-btn"
                           >Our Source</a
                         >
-                        <a href="about.html" class="btn btn-primary-custom"
+                        <a href="about.html" class="btn btn-primary-custom carousel-btn-2"
                           >Our Story</a
                         >
                       </div>
