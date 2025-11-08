@@ -722,3 +722,522 @@ i{
   color: var(--secondary-color);
 } */
  
+/* Philosophy Section Icon Styling */
+.philosophy-icon {
+  color: var(--primary-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.philosophy-icon:hover {
+  transform: scale(1.15) rotate(5deg);
+  color: var(--secondary-color);
+}
+
+/* ----------------------------
+   Scroll Animations
+---------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Scroll reveal classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ----------------------------
+   Enhanced Card Animations
+---------------------------- */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Philosophy cards */
+.philosophy-block .card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.philosophy-block .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(15, 71, 62, 0.2) !important;
+}
+
+/* ----------------------------
+   Enhanced Button Animations
+---------------------------- */
+.btn-primary-custom,
+.btn-visit,
+.carousel-btn,
+.carousel-btn-2 {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary-custom::before,
+.btn-visit::before,
+.carousel-btn::before,
+.carousel-btn-2::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary-custom:hover::before,
+.btn-visit:hover::before,
+.carousel-btn:hover::before,
+.carousel-btn-2:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary-custom:hover,
+.btn-visit:hover,
+.carousel-btn:hover,
+.carousel-btn-2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-custom:active,
+.btn-visit:active,
+.carousel-btn:active,
+.carousel-btn-2:active {
+  transform: translateY(0);
+}
+
+/* ----------------------------
+   Navbar Scroll Effects
+---------------------------- */
+.navbar {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  background-color: rgba(217, 179, 130, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand {
+  transform: scale(0.95);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+/* ----------------------------
+   Parallax Effect
+---------------------------- */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* ----------------------------
+   Gallery Lightbox
+---------------------------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: scaleIn 0.3s ease;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.lightbox-close:hover {
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ----------------------------
+   Scroll to Top Button
+---------------------------- */
+.scroll-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 20px;
+}
+
+.scroll-to-top.show {
+  display: flex;
+  animation: fadeInUp 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: var(--card-bg-dark);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
+/* ----------------------------
+   Loading Animation
+---------------------------- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* ----------------------------
+   Enhanced Image Effects
+---------------------------- */
+img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* ----------------------------
+   Section Animations
+---------------------------- */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade in sections on scroll */
+section:not(.hero-section) {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ----------------------------
+   Enhanced Footer Animations
+---------------------------- */
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  animation: slideInRight 1s ease;
+}
+
+.social-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------------
+   Text Animations
+---------------------------- */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.slideInRight {
+  animation-name: slideInRight;
+}
+
+.animated.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animated.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* ----------------------------
+   Carousel Enhancements
+---------------------------- */
+.carousel-item {
+  position: relative;
+}
+
+.carousel-caption {
+  animation: fadeInUp 1s ease-out;
+}
+
+.carousel-item.active .carousel-caption {
+  animation-delay: 0.3s;
+}
+
+/* ----------------------------
+   Card Image Overlay Effect
+---------------------------- */
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+/* ----------------------------
+   Smooth Transitions for All Interactive Elements
+---------------------------- */
+a, button, .card, .gallery-image, .navbar-nav .nav-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ----------------------------
+   Reduced Motion Support
+---------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+ 
