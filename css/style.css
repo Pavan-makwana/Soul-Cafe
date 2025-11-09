@@ -1,12 +1,12 @@
 /* ---------------------------------------------------
-   SOUL Restro Café — Updated Starbucks-Inspired Styling
+                SOUL Restro Café 
    --------------------------------------------------- */
 
 :root {
-  --primary-color: #0f473e;        /* Deep forest green */
-  --secondary-color: #d9b382;      /* Warm beige-golden tone */
-  --light-bg-color: #f7f3ee;       /* Creamy off-white */
-  --card-bg-dark: #195c51;         /* Slightly lighter green for cards */
+  --primary-color: #0f473e; /* Deep forest green */
+  --secondary-color: #d9b382; /* Warm beige-golden tone */
+  --light-bg-color: #f7f3ee; /* Creamy off-white */
+  --card-bg-dark: #195c51; /* Slightly lighter green for cards */
   --text-dark: #1a1a1a;
   --text-light: #f0f0f0;
   --font-family: "Poppins", sans-serif;
@@ -18,7 +18,7 @@
 ---------------------------- */
 body {
   font-family: var(--font-family);
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--text-light);
   scroll-behavior: smooth;
   margin: 0;
@@ -28,10 +28,78 @@ body {
   background-color: var(--light-bg-color);
   padding: 60px 30px;
   box-shadow: none;
-  
 }
-i{
+i {
   color: var(--primary-color);
+}
+
+/* Top Social Bar (Desktop Only) */
+.top-social-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #0f473e; /* Deep green */
+  z-index: 1055;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Centered welcome text */
+.top-social-bar .welcome-text {
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  /* text-align: center; */
+  margin-left: 38px;
+  flex: 1;
+}
+
+/* Social icons on right */
+.top-social-bar .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-social-bar .social-icons i {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.top-social-bar .social-icons i:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Push navbar below top bar */
+.navbar.fixed-top {
+  top: 42px;
+}
+
+/*  Responsive Fix for Top Bar + Navbar */
+@media (max-width: 992px) {
+  .top-social-bar {
+    display: none !important; /* hide top bar on mobile */
+  }
+
+  /* move navbar up since top bar is hidden */
+  .navbar.fixed-top {
+    top: 0 !important;
+  }
+}
+
+/* Desktop: keep navbar pushed below top bar */
+@media (min-width: 992px) {
+  .navbar.fixed-top {
+    top: 42px !important; /* height of your top bar */
+  }
 }
 
 /* ----------------------------
@@ -102,15 +170,14 @@ i{
 /* Show only on mobile */
 @media (max-width: 992px) {
   .nav-social-icons {
-    font-size:30px;
+    font-size: 30px;
     display: flex;
     justify-content: space-evenly;
     gap: 10px;
     margin-top: 15px;
-    text-decoration:none;
+    text-decoration: none;
   }
 }
-
 
 /* ----------------------------
    Logo Styling
@@ -271,7 +338,7 @@ i{
   transform: scale(1.05);
 }
 
-/* MOBILE VIEW FIX */
+/* MOBILE VIEW  */
 @media (max-width: 768px) {
   /* Round button design matching your theme */
   .carousel-control-prev,
@@ -313,7 +380,6 @@ i{
     transform: translateY(-50%) scale(0.95);
   }
 }
-
 
 /* ----------------------------
    Section Headings
@@ -407,7 +473,6 @@ i{
   border: none;
 }
 
-
 /* FOOTER SECTION */
 .footer {
   background-color: var(--secondary-color);
@@ -461,7 +526,6 @@ i{
 }
 
 .bg-card-dark-custom a:hover {
-  
   color: var(--primary-color) !important;
 }
 
@@ -721,7 +785,7 @@ i{
   background: var(--primary-color);
   color: var(--secondary-color);
 } */
- 
+
 /* Philosophy Section Icon Styling */
 .philosophy-icon {
   color: var(--primary-color);
@@ -791,7 +855,8 @@ i{
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -892,7 +957,7 @@ i{
 .btn-visit::before,
 .carousel-btn::before,
 .carousel-btn-2::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1103,8 +1168,12 @@ i{
    Loading Animation
 ---------------------------- */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading {
@@ -1154,13 +1223,18 @@ section:not(.hero-section) {
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
   animation: slideInRight 1s ease;
 }
 
@@ -1224,7 +1298,11 @@ section:not(.hero-section) {
 /* ----------------------------
    Smooth Transitions for All Interactive Elements
 ---------------------------- */
-a, button, .card, .gallery-image, .navbar-nav .nav-link {
+a,
+button,
+.card,
+.gallery-image,
+.navbar-nav .nav-link {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1240,4 +1318,3 @@ a, button, .card, .gallery-image, .navbar-nav .nav-link {
     transition-duration: 0.01ms !important;
   }
 }
- 
